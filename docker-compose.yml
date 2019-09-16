@@ -1,0 +1,4 @@
+fceux:
+  build: .
+  volumes:
+    - ./:/src
