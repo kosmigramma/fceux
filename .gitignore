@@ -1,0 +1,6 @@
+*.o
+src/fceux
+.sconf_temp/
+.sconsign.dblite
+fceux-net-server
+bin/
