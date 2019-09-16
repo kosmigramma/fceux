@@ -4,3 +4,4 @@ src/fceux
 .sconsign.dblite
 fceux-net-server
 bin/
+config.log
