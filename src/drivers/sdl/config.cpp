@@ -243,7 +243,6 @@ InitConfig()
     //TODO implement this
     config->addOption("periodicsaves", "SDL.PeriodicSaves", 0);
 
-    
     #ifdef _GTK
 	char* home_dir = getenv("HOME");
 	// prefixed with _ because they are internal (not cli options)
@@ -345,7 +344,7 @@ InitConfig()
 	// Takeshi no Chousenjou uses it for example.
 	prefix = "SDL.Input.FamicomPad2.";
 	config->addOption("rp2mic", prefix + "EnableMic", 0);
-
+	/*
 	// TODO: use a better data structure to store the hotkeys or something
 	//			improve this code overall in the future to make it
 	//			easier to maintain
@@ -383,6 +382,7 @@ InitConfig()
 	prefix = "SDL.Hotkeys.";
 	for(int i=0; i < HK_MAX; i++)
 		config->addOption(prefix + HotkeyStrings[i], Hotkeys[i]);
+        */
 	// All mouse devices
 	config->addOption("SDL.OekaKids.0.DeviceType", "Mouse");
 	config->addOption("SDL.OekaKids.0.DeviceNum", 0);
