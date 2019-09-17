@@ -21,6 +21,8 @@
 #include "../../oldmovie.h"
 #include "../../types.h"
 
+#include "../../state.h"
+
 #ifdef CREATE_AVI
 #include "../videolog/nesvideos-piece.h"
 #endif
@@ -579,6 +581,12 @@ void AsynchronousMainLoop(int frameskip, int periodic_saves)
 extern "C" {
     void setGamePadValue(int gamepadId, int buttonId, bool value) {
         overrideGamepadValue(gamepadId, buttonId, value);
+    }
+    void saveState() {
+        FCEUSS_Save("/DUMP.frz", false);
+    }
+    void loadState() {
+        FCEUSS_Load("/DUMP.frz", false);
     }
 }
 
