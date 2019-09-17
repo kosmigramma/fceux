@@ -588,6 +588,9 @@ extern "C" {
     void loadState() {
         FCEUSS_Load("/DUMP.frz", false);
     }
+    void enableFourScore() {
+        FCEUI_SetInputFourscore(true);
+    }
 }
 
 /**

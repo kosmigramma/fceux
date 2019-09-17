@@ -269,7 +269,7 @@ if env['EMSCRIPTEN']:
   fceux_dst_html = fceux_dst + '.html'
   env.Command(fceux_dst_object_file, fceux_dst, [Copy(fceux_dst_object_file, fceux_dst)])
   #TODO: Automatically use/extend the compiler flags when generating the .js
-  base_flags = '-g3 -O3 -s DISABLE_EXCEPTION_CATCHING=2 -s ASM_JS=1 -s USE_ZLIB=1 -s EXPORTED_FUNCTIONS=\'[\"_main\",\"_setGamePadValue\", \"_saveState\", \"_loadState\"]\' -s EXTRA_EXPORTED_RUNTIME_METHODS=\'[\"ccall\", \"cwrap\"]\''
+  base_flags = '-g3 -O3 -s DISABLE_EXCEPTION_CATCHING=2 -s ASM_JS=1 -s USE_ZLIB=1 -s EXPORTED_FUNCTIONS=\'[\"_main\",\"_setGamePadValue\", \"_saveState\", \"_loadState\", \"_enableFourScore\"]\' -s EXTRA_EXPORTED_RUNTIME_METHODS=\'[\"ccall\", \"cwrap\"]\''
   env.Command(fceux_dst_javascript, fceux_dst_object_file, 'em++ %s %s -o %s' % (base_flags, fceux_dst_object_file, fceux_dst_javascript))
   env.Command(fceux_dst_html, fceux_dst_object_file, 'em++ %s %s -o %s' % (base_flags, fceux_dst_object_file, fceux_dst_html))
 
