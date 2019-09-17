@@ -576,6 +576,12 @@ void AsynchronousMainLoop(int frameskip, int periodic_saves)
 }
 #endif
 
+extern "C" {
+    void setGamePadValue(int gamepadId, int buttonId, bool value) {
+        overrideGamepadValue(gamepadId, buttonId, value);
+    }
+}
+
 /**
  * The main loop for the SDL.
  */

@@ -1134,6 +1134,22 @@ ButtConfig GamePadConfig[4][10] = {
 /**
  * Update the status of the gamepad input devices.
  */
+
+bool overrideGamepadValues[4][8] = {
+    {
+        false,false,false,false,false,false,false,false
+    },
+    {
+        false,false,false,false,false,false,false,false
+    },
+    {
+        false,false,false,false,false,false,false,false
+    },
+    {
+        false,false,false,false,false,false,false,false
+    }
+};
+
 static void
 UpdateGamepad(void)
 {
@@ -1161,7 +1177,7 @@ UpdateGamepad(void)
 		// a, b, select, start, up, down, left, right
 		for (x = 0; x < 8; x++)
 		{
-			if (DTestButton (&GamePadConfig[wg][x]))
+			if (DTestButton (&GamePadConfig[wg][x]) || overrideGamepadValues[wg][x])
 			{
 				if(opposite_dirs == 0)
 				{
@@ -2428,4 +2444,8 @@ int ShowCursor(int toggle)
      */
     return 1;
 #endif
+}
+
+void overrideGamepadValue(int gamepadId, int buttonId, bool value) {
+    overrideGamepadValues[gamepadId][buttonId] = value;
 }

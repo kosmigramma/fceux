@@ -60,3 +60,4 @@ const char* ButtonName(const ButtConfig* bc, int which);
 int ShowCursor(int toggle);
 #endif
 
+void overrideGamepadValue(int gamepadId, int buttonId, bool value);
